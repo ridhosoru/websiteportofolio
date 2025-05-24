@@ -1,4 +1,17 @@
 export default function Profile({bgscreen}){
+    const exp = [
+        {instansi:'Batam State Polytechnic',division:'Electrical Engineering', year:'(2020-2024)'},
+        {instansi:'PT.Philips Industries',division:'Data Analytic Engineering', year:'(2023-2024)'}
+    ];
+
+    const proexp =[
+        {name :'Holographic LED Fan Display', position:'Project Leader,Program division',year :'(2021)'},
+        {name :'Automation Selection Wire Box', position:'Software Developer,Microcontroller Programmer',year :'(2022)'},
+        {name :'Classification Product using YOLO v7 and Raspy4B', position:'Software Developer,Microcontroller Programmer,ML',year :'(2023)'},
+        {name :'Prediction Measurement using sklearn-decision tree', position:'Software Developer,ML',year :'2024'},
+        {name :'MTC APP using PyQt6', position:'Software Developer',year :'2025'},
+    ];
+
     return(
         <div className="hidden md:block">
             <div className={`flex flex-col container h-screen w-3/4 mx-auto  `}>
@@ -18,26 +31,24 @@ export default function Profile({bgscreen}){
                         </div>
                         <div className="w-[100%] h-[80%] ">
                             <div className="h-[80%] w-[90%]  mx-auto mt-8 flex justify-center">
-                                <div className={`w-1 h-20 rounded-xl mx-auto ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}>
+                                <div className={`w-1 h-14 rounded-xl mx-auto ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}>
                                     <div>
-                                        <div className="relative">
-                                            <div className={`absolute top-0 -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}></div>
-                                            <div className={`absolute flex flex-col top-0 left-5 -translate-y-1/2 items-center justify-center h-[40px] w-[140px] ${bgscreen ? 'text-white':'text-black'}`}>
-                                                <div className=" text-[10px] font-bold">Batam State Polytechnic</div>
-                                                <div className=" text-[8px] italic">Electrical Engineering</div>
-                                                <div className=" text-[8px] ">(2020-2024)</div>
+                                        {exp.map((item,index)=>(
+                                            <div    className="relative" 
+                                                    key={index}
+                                            >
+                                                <div    className={`absolute -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}
+                                                        style={{ top: `${index * 50}px`}}
+                                                ></div>
+                                                <div    className={`absolute flex flex-col ${index % 2 === 0  ? 'left-5' : 'right-5'}  -translate-y-1/2 items-center justify-center h-[40px] w-[140px] ${bgscreen ? 'text-white':'text-black'}`}
+                                                        style={{ top: `${index * 50}px` }}
+                                                >
+                                                    <div className=" text-[10px] font-bold">{item.instansi}</div>
+                                                    <div className=" text-[8px] italic">{item.division}</div>
+                                                    <div className=" text-[8px] ">{item.year}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="relative">
-                                            <div className={`absolute top-20 -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}></div>
-                                            <div className={`absolute flex flex-col top-20 right-5 -translate-y-1/2 items-center justify-center h-[40px] w-[160px] ${bgscreen ? 'text-white':'text-black'}`}>
-                                                <div className=" text-[10px] font-bold">PT. Philips Industries Batam</div>
-                                                <div className=" text-[8px] italic">Data Analytic Engineering Intern</div>
-                                                <div className=" text-[8px] ">(2023-2024)</div>
-                                            </div>
-                                        </div>
+                                        ))}    
                                     </div>
                                 </div>
                             </div>
@@ -49,56 +60,26 @@ export default function Profile({bgscreen}){
                         </div>
                         <div className="w-[100%] h-[80%] ">
                             <div className="h-[80%] w-[90%] mx-auto mt-8 flex justify-center">
-                                <div className={`w-1 h-44 rounded-xl mx-auto ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}>
-                                    <div>
-                                        <div className="relative">
-                                            <div className={`absolute top-0 -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}></div>
-                                            <div className={`absolute flex flex-col top-0 left-5 -translate-y-1/2 items-center justify-center h-[40px] w-[200px]  ${bgscreen ? 'text-white':'text-black'}`}>
-                                                <div className=" text-[10px] font-bold text-center">Holographic LED Fan Display</div>
-                                                <div className=" text-[8px] italic">Project Leader,Program division</div>
-                                                <div className=" text-[8px] ">(2021)</div>
+                                <div className={`w-1 h-52 rounded-xl mx-auto ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}>
+                                    <div>{
+                                        proexp.map((item,index)=>(
+                                            <div    className="relative"
+                                                    key={index}
+                                            >
+                                                <div    className={`absolute -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}
+                                                        style={{ top: `${index * 50}px`}}
+                                                ></div>
+                                                <div    className={`absolute flex flex-col  ${index % 2 === 0  ? 'left-5' : 'right-5' } -translate-y-1/2 items-center justify-center h-[40px] w-[200px]  ${bgscreen ? 'text-white':'text-black'}`}
+                                                        style={{ top: `${index * 50}px`}}
+                                                >
+                                                    <div className=" text-[10px] font-bold text-center">{item.name}</div>
+                                                    <div className=" text-[8px] italic">{item.position}</div>
+                                                    <div className=" text-[8px] ">{item.year}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="relative">
-                                            <div className={`absolute top-10 -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}></div>
-                                            <div className={`absolute flex flex-col top-10 right-5 -translate-y-1/2 items-center justify-center h-[40px] w-[200px] ${bgscreen ? 'text-white':'text-black'}`}>
-                                                <div className=" text-[10px] font-bold">Automation Selection Wire Box</div>
-                                                <div className=" text-[8px] italic">Software Developer,Microcontroller Programmer</div>
-                                                <div className=" text-[8px] ">(2022)</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div>
-                                        <div className="relative">
-                                            <div className={`absolute top-20 -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}></div>
-                                            <div className={`absolute flex flex-col top-20 left-5 -translate-y-1/2 items-center justify-center h-[40px] w-[200px] ${bgscreen ? 'text-white':'text-black'}`}>
-                                                <div className=" text-[10px] font-bold text-center">Classification Product using YOLO v7 and Raspy4B</div>
-                                                <div className=" text-[8px] italic">Software Developer,Microcontroller Programmer,ML</div>
-                                                <div className=" text-[8px] ">(2023)</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="relative">
-                                            <div className={`absolute top-32 -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}></div>
-                                            <div className={`absolute flex flex-col top-32 right-5 -translate-y-1/2 items-center justify-center h-[40px] w-[200px] ${bgscreen ? 'text-white':'text-black'}`}>
-                                                <div className=" text-[10px] font-bold text-center">Prediction Measurement using sklearn-decision tree</div>
-                                                <div className=" text-[8px] italic">Software Developer,ML</div>
-                                                <div className=" text-[8px] ">(2024)</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="relative">
-                                            <div className={`absolute top-44 -translate-x-1 w-3 h-3 rounded-full ${bgscreen ? 'bg-[#FA812F]':'bg-[#7965C1]'}`}></div>
-                                            <div className={`absolute flex flex-col top-44 left-5 -translate-y-1/2 items-center justify-center h-[40px] w-[200px] ${bgscreen ? 'text-white':'text-black'}`}>
-                                                <div className=" text-[10px] font-bold text-center">MTC APP using PyQt6</div>
-                                                <div className=" text-[8px] italic">Software Developer</div>
-                                                <div className=" text-[8px] ">(2025)</div>
-                                            </div>
-                                        </div>
+                                        ))
+                                        }
+                                        
                                     </div>
                                 </div>
                             </div>
