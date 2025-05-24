@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+    .nav{
+        @apply relative text-white tracking-[1px]  hover:text-white hover:font-bold;
+
+    }
+    .nav::after{
+        @apply content-[''] bg-white h-[3px] w-[0%] left-0 bottom-[1px] rounded-xl duration-500 absolute;
+    }
+    .nav::after:hover{
+        @apply w-[100%]
+    }
+    .navOnclick{
+        @apply relative text-white font-bold tracking-[1px]
+    }
+    /* .navOnclick::after{
+        @apply content-[''] bg-white h-[3px] w-[100%] left-0 bottom-[1px] rounded-xl duration-500 absolute;
+    } */
+
+    .condiv{
+        @apply relative font-bold text-[#7965C1] outline outline-2 outline-[#7965C1] hover:text-white rounded-3xl z-[0];
+    }
+    
+    .condiv::after{
+        @apply bg-[#7965C1] h-[40px] bottom-[0px] w-[0%] left-0 rounded-3xl  absolute content-[''] z-[-1] duration-200;
+
+    }
+    .condiv::after:hover{
+        @apply w-[100%]
+    }
+
+    .condivdark{
+        @apply relative font-bold text-[#FA812F] outline outline-2 outline-[#FA812F] hover:text-white rounded-3xl z-[0];
+    }
+    
+    .condivdark::after{
+        @apply bg-[#FA812F] h-[40px] bottom-[0px] w-[0%] left-0 rounded-3xl  absolute content-[''] z-[-1] duration-200;
+
+    }
+    .condivdark::after:hover{
+        @apply w-[100%]
+    }
+}
