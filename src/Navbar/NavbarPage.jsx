@@ -13,14 +13,26 @@ export default function NavbarPage({bgscreen, setBgscreen }){
     const printText = `print("${selected}")`
     const [scrolled,setScrolled] = useState(false);
 
-    // useEffect(()=>{
-    //     const handleScrolled = ()=>{
-    //         setScrolled(window.scrollY>)
+    useEffect(()=>{
+        const handleScrolled = ()=>{
+            const scrollPos = window.scrollY;
+            navItems.forEach((item)=>{
+                const getId = document.getElementById(item.classname);
+                if (getId) {
+                    const getTop = getId.offsetTop;
+                    const getHigh = getId.offsetHeight;
 
-    //     }
-    // })
-
-    // }
+                    if(scrollPos >= getTop-100 && scrollPos < getTop + getHigh-100){
+                        setSelected(item.classname)
+                    }
+                
+                }; 
+            });
+        }
+        window.addEventListener('scroll',handleScrolled);
+        return ()=>window.removeEventListener("scroll", handleScrolled);
+    })
+    
     function TypeAn(){
         return(
             <TypeAnimation

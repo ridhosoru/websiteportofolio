@@ -37,11 +37,11 @@ export default function HomePage({bgscreen}){
     }
     return(
         <div className="hidden md:block">
-            <div className="flex container h-screen w-3/4 mx-auto">
+            <div className="flex container h-screen w-3/4 mx-auto ">
                 <div className={`flex flex-col h-1/2 w-3/4  mx-auto my-auto items-center justify-center `}>
-                    <div className={`text-6xl font-bold ${bgscreen ? 'text-white' : 'text-[#7965C1]' } `}>Welcome to my website</div>
-                    <div className={`text-4xl mt-4 font-bold ${bgscreen ? 'text-[#FA812F]' : 'text-[#7965C1]'} `}>I'm Yohanes Ridho Soru</div>
-                    <div className={`text-2xl mt-4 font-bold italic  ${bgscreen ? 'text-white' : 'text-[#7965C1]'} `}>"An ordinary man who has a passion for programming and electrical"</div>
+                    <div className={`text-5xl font-bold ${bgscreen ? 'text-white' : 'text-[#7965C1]' } `}>Welcome to my website</div>
+                    <div className={`text-3xl mt-4 font-bold ${bgscreen ? 'text-[#FA812F]' : 'text-[#7965C1]'} `}>I'm Yohanes Ridho Soru</div>
+                    <div className={`text-sm mt-4 font-bold italic  ${bgscreen ? 'text-white' : 'text-black'} `}>"An ordinary man who has a passion for programming and electrical"</div>
                     <div className="flex mt-6 gap-10  text-white">
                         <div onClick={(e)=>{
                             setItem(!item);
@@ -51,7 +51,7 @@ export default function HomePage({bgscreen}){
                             {!item && <ButtonConnA/>}
                             {item && <ButtonConnb/>}
                         </div>
-                        <button className={`h-[40px] w-[250px] ${bgscreen ? 'condivdark' : 'condiv' }`}>Download CV</button>
+                        {/* <button className={`h-[40px] w-[250px] ${bgscreen ? 'condivdark' : 'condiv' }`}>Download CV</button> */}
                     </div>
                 </div>
             </div>

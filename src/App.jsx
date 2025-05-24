@@ -8,7 +8,7 @@ export default function App(){
   const[bgscreen,setBgscreen] = useState(false);
   
   return(
-    <div className={bgscreen ? 'bg-black h-screen':'bg-white h-screen'}>
+    <div className={bgscreen ? 'bg-black ':'bg-white'}>
       <Router>
         <div>
         <section id="NavbarPage"><NavbarPage setBgscreen={setBgscreen} bgscreen={bgscreen}/></section>
